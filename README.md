@@ -26,4 +26,4 @@ pip install -r requirements.txt
 pronto, Agora execute o arquivo main.py 
 
 
-- Caso queira visualizar a tabela no banco de dados, no VsCode instale a extenção SQLite Viewer
+- Caso queira visualizar a tabela no banco de dados, no VsCode instale a extensão SQLite Viewer
