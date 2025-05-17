@@ -30,27 +30,27 @@ class CriarAtivos:  # Cria uma classe que contém as funcionalidades do sistema
 
     
     
-    def alterar(self, parametro, editar_produto=False, editar_descricao=False, editar_valor=False, editar_quantidade=False, editar_status=False): # define o método alterar
+    def alterar(self, parametro, editar_produto=False, editar_descricao=False, editar_valor=False, editar_quantidade=False, editar_status=False): # define o método alterar, com os parametros que serão alterados.
         alterar_dados = AlterarDados() # instância a classe AlterarDados
 
-        if editar_produto is True:
-            self.consultar(parametro)
-            alterar_dados.alterar_nome_produto(parametro)
+        if editar_produto is True: #realiza uma ação se caso o usuário queira alterar o nome do produto, passamdo o editar_produto=True na chamada do método
+            self.consultar(parametro) # chama o método consultar da classe.
+            alterar_dados.alterar_nome_produto(parametro) # chama a classe e o método que faz a alteração do status.
         
-        elif editar_descricao is True: #realiza uma ação se caso o usuário queira alterar o status do produto, passamdo o editar_status=True na chamada do método 
+        elif editar_descricao is True: #realiza uma ação se caso o usuário queira alterar a descrição, passando o editar_descricao=True na chamada do método 
             self.consultar(parametro) # chama o método consultar da classe.
             alterar_dados.alterar_descricao(parametro) # chama a classe e o método que faz a alteração do status.
         
-        elif editar_valor is True: #realiza uma ação se caso o usuário queira alterar o status do produto, passamdo o editar_status=True na chamada do método 
+        elif editar_valor is True: #realiza uma ação se caso o usuário queira alterar o valor, passando o editar_valor=True na chamada do método 
             self.consultar(parametro) # chama o método consultar da classe.
             alterar_dados.alterar_valor(parametro) # chama a classe e o método que faz a alteração do status.
         
         
-        elif editar_quantidade is True: #realiza uma ação se caso o usuário queira alterar o status do produto, passamdo o editar_status=True na chamada do método 
+        elif editar_quantidade is True: #realiza uma ação se caso o usuário queira alterar a quantidade, passando o editar_quantidade=True na chamada do método 
             self.consultar(parametro) # chama o método consultar da classe.
             alterar_dados.alterar_quantidade(parametro) # chama a classe e o método que faz a alteração do status.
         
-        elif editar_status is True: #realiza uma ação se caso o usuário queira alterar o status do produto, passamdo o editar_status=True na chamada do método 
+        elif editar_status is True: #realiza uma ação se caso o usuário queira alterar o status do produto, passando o editar_status=True na chamada do método 
             self.consultar(parametro) # chama o método consultar da classe.
             alterar_dados.alterar_status(parametro) # chama a classe e o método que faz a alteração do status.
 
@@ -58,11 +58,11 @@ class CriarAtivos:  # Cria uma classe que contém as funcionalidades do sistema
 
 
     def listar(self): # define o método listar
-        with Session(engine) as session:
-            pegar_todos_ativos = select(GestaoAtivos)
-            ativos_encontrados = session.exec(pegar_todos_ativos).all()
+        with Session(engine) as session: # abre uma conexão no banco de dados
+            pegar_todos_ativos = select(GestaoAtivos) # realiza uma consulta SQL na tabela Gestão ativos, e verifica se o paramentro é igual a variavel produto
+            ativos_encontrados = session.exec(pegar_todos_ativos).all() # executa a consulta da linha anterior e pega todos os valores correspondentes
 
-            return ativos_encontrados
+            return ativos_encontrados # retorna a consulta se ela for encontrada.
 
 
 
