@@ -84,7 +84,7 @@ class Menu(CriarAtivos): # define a classe Menu que herda da classe CriarAtivos
             clear() # limpa a tela do terminal
             print('Cadastro realizado com sucesso.') # imprime uma mensagem de sucesso
             cadastrar_novamente = input('deseja realizar outro cadastro? (s/n) ').lower() # pergunta se o usuário deseja realizar outro cadastro
- 
+
             if cadastrar_novamente == 's': # se o usuário escolher 's'
                 clear() # limpa a tela do terminal
             else: # se o usuário escolher 'n'
@@ -147,7 +147,7 @@ class Menu(CriarAtivos): # define a classe Menu que herda da classe CriarAtivos
                 super().alterar(consultar_pelo_produto, editar_quantidade=True) # chama o método alterar da classe CriarAtivos, passando o nome do produto a ser alterado e o parâmetro editar_quantidade como True
             elif escolher_opcao == 5: # se o usuário escolher a opção 5
                 super().alterar(consultar_pelo_produto, editar_status=True) # chama o método alterar da classe CriarAtivos, passando o nome do produto a ser alterado e o parâmetro editar_status como True
-           
+        
 
             opcao_continuar = input('Deseja Fazer mais alguma alteração? (s/n) ').lower() # pergunta se o usuário deseja fazer mais alguma alteração
 
@@ -160,7 +160,7 @@ class Menu(CriarAtivos): # define a classe Menu que herda da classe CriarAtivos
                 time.sleep(1) # faz uma pausa de 1 segundo
                 clear() # limpa a tela do terminal
 
-             
+            
                     
 
     

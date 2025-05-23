@@ -23,7 +23,9 @@ Se caso der erro, execute o comando abaixo:
 
 pip install -r requirements.txt
 
-pronto, Agora execute o arquivo main.py 
+pronto, Agora execute o programa com o comando abaixo:
+    
+    python -u main.py
 
 
 - Caso queira visualizar a tabela no banco de dados, no VsCode instale a extensão SQLite Viewer
